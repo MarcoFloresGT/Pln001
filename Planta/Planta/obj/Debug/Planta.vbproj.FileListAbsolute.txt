@@ -1,0 +1,15 @@
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\bin\Debug\Planta.exe
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\bin\Debug\Planta.pdb
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\bin\Debug\Planta.xml
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\bin\Debug\System.Data.SQLite.dll
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.vbprojResolveAssemblyReference.cache
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.Form1.resources
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.Form2.resources
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.Form3.resources
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.Form4.resources
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.MainForm.resources
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.Resources.resources
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.vbproj.GenerateResource.Cache
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.exe
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.xml
+C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.pdb
