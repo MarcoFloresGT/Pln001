@@ -13,3 +13,6 @@ C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.vbproj.Ge
 C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.exe
 C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.xml
 C:\Users\Rentascada\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.pdb
+C:\Users\Ing. Erwin Flores\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.exe
+C:\Users\Ing. Erwin Flores\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.xml
+C:\Users\Ing. Erwin Flores\Source\Repos\Pln001\Planta\Planta\obj\Debug\Planta.pdb
