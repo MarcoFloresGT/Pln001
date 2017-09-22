@@ -34,7 +34,7 @@
                 Using CMD As New Data.SQLite.SQLiteCommand
                     With CMD
                         .Connection = CN
-                        .CommandText = "Create table mezclas(nombre varchar(50), AGG1 varchar(50), AGG2 varchar(50), AGG3 varchar(50), AGG4 varchar(50),AC varchar(50), AGG1Peso real, AGG2Peso real, AGG3Peso real, AGG4Peso real, ACPeso real,creada integer,modificada integer,enproceso integer);"
+                        .CommandText = "Create table mezclas(id integer,nombre varchar(50), AGG1 varchar(50), AGG2 varchar(50), AGG3 varchar(50), AGG4 varchar(50),AC varchar(50), AGG1Peso real, AGG2Peso real, AGG3Peso real, AGG4Peso real, ACPeso real,creada integer,modificada integer,enproceso integer);"
                     End With
                     CMD.ExecuteNonQuery()
                     CMD.CommandText = "Create table humedades(mezcla integer,hora integer,AGG1 real,AGG2 real,AGG3 real,AGG4 real);"

@@ -6,82 +6,43 @@
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim carpeta As String = "c:\planta" 'String.Format("{0}", Environment.CurrentDirectory)
-        Dim enproceso As Boolean = False
+
         Using CN As New System.Data.SQLite.SQLiteConnection
             CN.ConnectionString = "DataSource=" + carpeta + "\Planta.db;Version=3;New=False;Compress=True;"
             CN.Open()
             Dim unamezcla As mezcla = New mezcla()
-            mezcla.Items.Clear()
+
             Using CMD As New Data.SQLite.SQLiteCommand
                 With CMD
                     .Connection = CN
-                    .CommandText = "select ROWID,nombre, AGG1, AGG2, AGG3, AGG4,AC, AGG1Peso, AGG2Peso, AGG3Peso, AGG4Peso, ACPeso,creada,modificada,enproceso from mezclas order by case when modificada is null then creada else modificada end;"
+                    .CommandText = "select * from mezclas order by case when modificada is null then creada else modificada end;"
                 End With
                 Using reader As SQLite.SQLiteDataReader = CMD.ExecuteReader()
-                    If reader.HasRows Then
-                        Do While reader.Read()
-                            unamezcla.id = reader.Item("ROWID")
-                            unamezcla.nombre = reader.Item("nombre")
-                            unamezcla.Agg1 = reader.Item("agg1")
-                            unamezcla.Agg2 = reader.Item("agg2")
-                            unamezcla.Agg3 = reader.Item("agg3")
-                            unamezcla.Agg4 = reader.Item("agg4")
-                            unamezcla.Ac = reader.Item("ac")
-                            unamezcla.Agg1Peso = reader.Item("agg1Peso")
-                            unamezcla.Agg2Peso = reader.Item("agg2peso")
-                            unamezcla.Agg3Peso = reader.Item("agg3peso")
-                            unamezcla.Agg4Peso = reader.Item("agg4peso")
-                            unamezcla.AcPeso = reader.Item("acpeso")
-                            If reader.Item("creada").GetType.Name = "Int64" Then
-                                unamezcla.creada = DateTime.FromBinary(reader.Item("creada"))
-                            End If
-                            If reader.Item("modificada").GetType.Name = "Int64" Then
-                                unamezcla.modificada = DateTime.FromBinary(reader.Item("modificada"))
-                            End If
-                            If reader.Item("enproceso").GetType.Name = "Int64" Then
-                                unamezcla.enproceso = reader.Item("enproceso")
-                            Else
-                                unamezcla.enproceso = False
-                            End If
-                            mezclas.Add(unamezcla, unamezcla.nombre)
-                            mezcla.Items.Add(unamezcla.nombre)
-                            mezcla.Refresh()
-                            Application.DoEvents()
-                            If unamezcla.enproceso Then
-                                mezcla.SelectedIndex = mezcla.Items.Count - 1
-                                enproceso = True
-                                AGG1.Text = unamezcla.Agg1
-                                AGG2.Text = unamezcla.Agg2
-                                AGG3.Text = unamezcla.Agg3
-                                AGG4.Text = unamezcla.Agg4
-                                AGG1Peso.Text = unamezcla.Agg1Peso
-                                AGG2Peso.Text = unamezcla.Agg2Peso
-                                AGG3Peso.Text = unamezcla.Agg3Peso
-                                AGG4Peso.Text = unamezcla.Agg4Peso
-                                AC.Text = unamezcla.Ac
-                                ACPeso.Text = unamezcla.AcPeso
-                                AGG1.Enabled = False
-                                AGG2.Enabled = False
-                                AGG3.Enabled = False
-                                AGG4.Enabled = False
-                                AGG1Peso.Enabled = False
-                                AGG2Peso.Enabled = False
-                                AGG3Peso.Enabled = False
-                                AGG4Peso.Enabled = False
-                                AC.Enabled = False
-                                ACPeso.Enabled = False
-                                editar.Enabled = True
-                                grabar.Enabled = False
-                            End If
-                        Loop
-                    End If
+                    Do While reader.NextResult
+                        unamezcla.id = reader.GetInt32(1)
+                        unamezcla.nombre = reader.GetInt32(2)
+                        unamezcla.Agg1 = reader.GetInt32(3)
+                        unamezcla.Agg2 = reader.GetInt32(4)
+                        unamezcla.Agg3 = reader.GetInt32(5)
+                        unamezcla.Agg4 = reader.GetInt32(6)
+                        unamezcla.Ac = reader.GetInt32(7)
+                        unamezcla.Agg1Peso = reader.GetFloat(8)
+                        unamezcla.Agg2Peso = reader.GetFloat(9)
+                        unamezcla.Agg3Peso = reader.GetFloat(10)
+                        unamezcla.Agg4Peso = reader.GetFloat(11)
+                        unamezcla.AcPeso = reader.GetFloat(12)
+                        unamezcla.creada = reader.GetDateTime(13)
+                        unamezcla.modificada = reader.GetDateTime(14)
+                        unamezcla.enproceso = reader.GetBoolean(15)
+                        mezclas.Add(unamezcla)
+                        mezcla.Items.Add(unamezcla.nombre)
+                        If unamezcla.enproceso Then
+                            mezcla.SelectedIndex = mezcla.Items.Count
+                        End If
+                    Loop
                 End Using
             End Using
-            CN.Close()
         End Using
-        If Not enproceso Then
-            mezcla.Text = ""
-        End If
     End Sub
 
     Private Sub mezcla_SelectedIndexChanged(sender As Object, e As EventArgs) Handles mezcla.SelectedIndexChanged
@@ -100,16 +61,6 @@
             AC.Text = unamezcla.Ac
             editar.Enabled = True
             grabar.Enabled = False
-            AGG1.Enabled = False
-            AGG2.Enabled = False
-            AGG3.Enabled = False
-            AGG4.Enabled = False
-            AGG1Peso.Enabled = False
-            AGG2Peso.Enabled = False
-            AGG3Peso.Enabled = False
-            AGG4Peso.Enabled = False
-            AC.Enabled = False
-            ACPeso.Enabled = False
         End If
     End Sub
 
@@ -121,38 +72,13 @@
             mezcla.Refresh()
             Application.DoEvents()
             mezcla.SelectedIndex = mezcla.Items.Count - 1
-
-            Dim carpeta As String = "c:\planta" 'String.Format("{0}", Environment.CurrentDirectory)
-            Using CN As New System.Data.SQLite.SQLiteConnection
-                CN.ConnectionString = "DataSource=" + carpeta + "\Planta.db;Version=3;New=False;Compress=True;"
-                CN.Open()
-                Using CMD As New Data.SQLite.SQLiteCommand
-                    With CMD
-                        .Connection = CN
-                        .CommandText = "select ROWID,nombre, AGG1, AGG2, AGG3, AGG4,AC, AGG1Peso, AGG2Peso, AGG3Peso, AGG4Peso, ACPeso,creada,modificada,enproceso from mezclas order by case when modificada is null then creada else modificada end limit 1 offset 0;"
-                    End With
-                    Using reader As SQLite.SQLiteDataReader = CMD.ExecuteReader()
-                        If reader.HasRows Then
-                            Do While reader.Read()
-                                AGG1.Text = reader.Item("AGG1")
-                                AGG2.Text = reader.Item("AGG2")
-                                AGG3.Text = reader.Item("AGG3")
-                                AGG4.Text = reader.Item("AGG4")
-                            Loop
-                        Else
-                            AGG1.Text = ""
-                            AGG2.Text = ""
-                            AGG3.Text = ""
-                            AGG4.Text = ""
-                        End If
-                    End Using
-                End Using
-                    CN.Close()
-            End Using
             Dim unamezcla As mezcla = New mezcla
-            unamezcla.id = 0
             unamezcla.nombre = valor
             mezclas.Add(unamezcla, valor)
+            AGG1.Text = ""
+            AGG2.Text = ""
+            AGG3.Text = ""
+            AGG4.Text = ""
             AGG1Peso.Text = ""
             AGG2Peso.Text = ""
             AGG3Peso.Text = ""
@@ -328,61 +254,10 @@
                 Using CMD As New Data.SQLite.SQLiteCommand
                     With CMD
                         .Connection = CN
-                        If unamezcla.id > 0 Then
-                            .CommandText = "update mezclas set AGG1=@AGG1, AGG2=@AGG2, AGG3=@AGG3, AGG4=@AGG4,AC=@AC, AGG1Peso=@AGG1Peso, AGG2Peso=@AGG2Peso, AGG3Peso=@AGG3Peso, AGG4Peso=@AGG4Peso, ACPeso=@ACPeso,modificada=@modificada " +
-                                        "where ROWID=@ROWID;"
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG1", unamezcla.Agg1))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG2", unamezcla.Agg2))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG3", unamezcla.Agg3))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG4", unamezcla.Agg4))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AC", unamezcla.Ac))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG1Peso", unamezcla.Agg1Peso))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG2Peso", unamezcla.Agg2Peso))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG3Peso", unamezcla.Agg3Peso))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG4Peso", unamezcla.Agg4Peso))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@ACPeso", unamezcla.AcPeso))
-                            Dim time1 As DateTime = DateTime.Now
-                            .Parameters.Add(New SQLite.SQLiteParameter("@modificada", time1.ToBinary))
-                            .ExecuteNonQuery()
-                        Else
-                            .CommandText = "insert into mezclas(nombre, AGG1, AGG2, AGG3, AGG4,AC, AGG1Peso, AGG2Peso, AGG3Peso, AGG4Peso, ACPeso,creada)" +
-                                        "values (@nombre, @AGG1, @AGG2, @AGG3, @AGG4, @AC, @AGG1Peso, @AGG2Peso, @AGG3Peso, @AGG4Peso, @ACPeso, @creada);"
-                            .Parameters.Add(New SQLite.SQLiteParameter("@nombre", unamezcla.nombre))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG1", unamezcla.Agg1))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG2", unamezcla.Agg2))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG3", unamezcla.Agg3))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG4", unamezcla.Agg4))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AC", unamezcla.Ac))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG1Peso", unamezcla.Agg1Peso))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG2Peso", unamezcla.Agg2Peso))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG3Peso", unamezcla.Agg3Peso))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@AGG4Peso", unamezcla.Agg4Peso))
-                            .Parameters.Add(New SQLite.SQLiteParameter("@ACPeso", unamezcla.AcPeso))
-                            Dim time1 As DateTime = DateTime.Now
-                            .Parameters.Add(New SQLite.SQLiteParameter("@creada", time1.ToBinary))
-                            .ExecuteNonQuery()
-
-                            .Parameters.Clear()
-                            .CommandText = "select ROWID from mezclas where nombre=@nombre"
-                            .Parameters.Add(New SQLite.SQLiteParameter("@nombre", unamezcla.nombre))
-                            unamezcla.id = .ExecuteScalar()
-                        End If
+                        .CommandText = "select * from mezclas order by case when modificada is null then creada else modificada end;"
                     End With
                 End Using
             End Using
         End If
-    End Sub
-
-    Private Sub editar_Click(sender As Object, e As EventArgs) Handles editar.Click
-        AGG1.Enabled = True
-        AGG2.Enabled = True
-        AGG3.Enabled = True
-        AGG4.Enabled = True
-        AGG1Peso.Enabled = True
-        AGG2Peso.Enabled = True
-        AGG3Peso.Enabled = True
-        AGG4Peso.Enabled = True
-        AC.Enabled = True
-        ACPeso.Enabled = True
     End Sub
 End Class
