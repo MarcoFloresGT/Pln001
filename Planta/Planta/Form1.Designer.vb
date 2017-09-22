@@ -116,7 +116,7 @@ Partial Class Form1
         '
         Me.Button1.BackColor = System.Drawing.Color.Red
         Me.Button1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.DimGray
+        Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(17, 380)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(295, 60)

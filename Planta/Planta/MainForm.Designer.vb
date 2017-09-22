@@ -180,7 +180,7 @@ Partial Class MainForm
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(81, 16)
         Me.Label43.TabIndex = 63
-        Me.Label43.Text = "30"
+        Me.Label43.Text = "48"
         Me.Label43.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label44
@@ -190,7 +190,7 @@ Partial Class MainForm
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(81, 16)
         Me.Label44.TabIndex = 62
-        Me.Label44.Text = "40.1"
+        Me.Label44.Text = "38.5"
         Me.Label44.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ProgressBar2
@@ -263,7 +263,7 @@ Partial Class MainForm
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(81, 16)
         Me.Label42.TabIndex = 61
-        Me.Label42.Text = "30"
+        Me.Label42.Text = "33"
         Me.Label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label41
@@ -273,7 +273,7 @@ Partial Class MainForm
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(81, 16)
         Me.Label41.TabIndex = 60
-        Me.Label41.Text = "40.1"
+        Me.Label41.Text = "29.9"
         Me.Label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ProgressBar1
@@ -343,52 +343,52 @@ Partial Class MainForm
         '
         Me.Label22.BackColor = System.Drawing.Color.White
         Me.Label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label22.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.Black
         Me.Label22.Location = New System.Drawing.Point(747, 49)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(71, 34)
         Me.Label22.TabIndex = 96
-        Me.Label22.Text = "25%h"
+        Me.Label22.Text = "6.2%h"
         Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label21
         '
         Me.Label21.BackColor = System.Drawing.Color.White
         Me.Label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label21.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.Black
         Me.Label21.Location = New System.Drawing.Point(528, 49)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(71, 34)
         Me.Label21.TabIndex = 95
-        Me.Label21.Text = "25%h"
+        Me.Label21.Text = "6.8%h"
         Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label20
         '
         Me.Label20.BackColor = System.Drawing.Color.White
         Me.Label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label20.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.Black
         Me.Label20.Location = New System.Drawing.Point(308, 49)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(71, 34)
         Me.Label20.TabIndex = 94
-        Me.Label20.Text = "25%h"
+        Me.Label20.Text = "5.8%h"
         Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label19
         '
         Me.Label19.BackColor = System.Drawing.Color.White
         Me.Label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label19.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.Black
         Me.Label19.Location = New System.Drawing.Point(89, 49)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(71, 34)
         Me.Label19.TabIndex = 93
-        Me.Label19.Text = "25%h"
+        Me.Label19.Text = "5%h"
         Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label17
@@ -401,7 +401,7 @@ Partial Class MainForm
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(71, 34)
         Me.Label17.TabIndex = 92
-        Me.Label17.Text = "25%"
+        Me.Label17.Text = "15%"
         Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label18
@@ -414,7 +414,7 @@ Partial Class MainForm
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(71, 34)
         Me.Label18.TabIndex = 91
-        Me.Label18.Text = "25%"
+        Me.Label18.Text = "5%"
         Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label16
@@ -427,7 +427,7 @@ Partial Class MainForm
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(71, 34)
         Me.Label16.TabIndex = 90
-        Me.Label16.Text = "25%"
+        Me.Label16.Text = "45%"
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label15
@@ -440,7 +440,7 @@ Partial Class MainForm
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(71, 34)
         Me.Label15.TabIndex = 89
-        Me.Label15.Text = "25%"
+        Me.Label15.Text = "35%"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'CheckBox3
@@ -513,7 +513,7 @@ Partial Class MainForm
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(214, 44)
         Me.Label23.TabIndex = 101
-        Me.Label23.Text = "8.5 / 21"
+        Me.Label23.Text = "8.5 / 17.7"
         Me.Label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label1
@@ -548,7 +548,7 @@ Partial Class MainForm
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(81, 16)
         Me.Label47.TabIndex = 64
-        Me.Label47.Text = "30"
+        Me.Label47.Text = "55"
         Me.Label47.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label48
@@ -558,7 +558,7 @@ Partial Class MainForm
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(81, 16)
         Me.Label48.TabIndex = 63
-        Me.Label48.Text = "40.1"
+        Me.Label48.Text = "4.3"
         Me.Label48.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ProgressBar4
@@ -644,7 +644,7 @@ Partial Class MainForm
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(81, 16)
         Me.Label45.TabIndex = 63
-        Me.Label45.Text = "30"
+        Me.Label45.Text = "35"
         Me.Label45.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label46
@@ -654,7 +654,7 @@ Partial Class MainForm
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(81, 16)
         Me.Label46.TabIndex = 62
-        Me.Label46.Text = "40.1"
+        Me.Label46.Text = "12.8"
         Me.Label46.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ProgressBar3
@@ -741,7 +741,7 @@ Partial Class MainForm
         Me.Label54.Name = "Label54"
         Me.Label54.Size = New System.Drawing.Size(153, 34)
         Me.Label54.TabIndex = 104
-        Me.Label54.Text = "85.5 ton/h"
+        Me.Label54.Text = "5.1 ton/h"
         Me.Label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel1
@@ -1073,7 +1073,7 @@ Partial Class MainForm
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(214, 19)
         Me.Label6.TabIndex = 65
-        Me.Label6.Text = "Agregado de 3/4"" a 3/8"""
+        Me.Label6.Text = "Polvo de Roca 3/16  a 0"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label5
@@ -1083,7 +1083,7 @@ Partial Class MainForm
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(214, 19)
         Me.Label5.TabIndex = 64
-        Me.Label5.Text = "Agregado de 3/4"" a 3/8"""
+        Me.Label5.Text = "Agregado de 3/16"" a 0"""
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label4
@@ -1093,7 +1093,7 @@ Partial Class MainForm
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(214, 19)
         Me.Label4.TabIndex = 63
-        Me.Label4.Text = "Agregado de 3/4"" a 3/8"""
+        Me.Label4.Text = "Agregado de 3/8"" a 3/16"""
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label3
@@ -1263,7 +1263,7 @@ Partial Class MainForm
         Me.Label66.Name = "Label66"
         Me.Label66.Size = New System.Drawing.Size(58, 16)
         Me.Label66.TabIndex = 65
-        Me.Label66.Text = "30"
+        Me.Label66.Text = "155"
         Me.Label66.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label60
